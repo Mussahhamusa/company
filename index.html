@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Company Website</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+
+    header {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 1em;
+    }
+
+    section {
+      margin: 20px;
+    }
+
+    .content {
+      background-color: white;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 1em;
+      position: fixed;
+      bottom: 0;
+      width: 100%;
+    }
+
+    /* Admin Panel Styles */
+    .admin-panel {
+      position: fixed;
+      top: 0;
+      right: 0;
+      background-color: #333;
+      color: white;
+      padding: 10px;
+      border-bottom-left-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 600px) {
+      .content {
+        margin: 10px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>Company Name</h1>
+  </header>
+
+  <section class="content">
+    <h2>Welcome to Our Company Website</h2>
+    <p>This is a simple example. Feel free to customize as needed.</p>
+  </section>
+
+  <!-- Admin Panel -->
+  <div class="admin-panel">
+    <a href="/admin/">Admin Panel</a>
+  </div>
+
+  <footer>
+    &copy; 2023 Company Name. All rights reserved.
+  </footer>
+
+  <!-- Netlify CMS Script -->
+  <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
+  <script src="https://unpkg.com/netlify-cms@^2.0.0/dist/netlify-cms.js"></script>
+  <script>
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on("init", (user) => {
+        if (!user) {
+          window.netlifyIdentity.on("login", () => {
+            document.location.href = "/admin/";
+          });
+        }
+      });
+    }
+  </script>
+
+</body>
+
+</html>

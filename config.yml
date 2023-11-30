@@ -1,0 +1,15 @@
+backend:
+  name: github
+  repo: Mussahhamusa/company  # Replace with your GitHub username and repository name
+
+media_folder: "static/uploads"
+public_folder: "/uploads"
+
+collections:
+  - name: "blog"
+    label: "Blog"
+    folder: "blog"
+    create: true
+    fields:
+      - { label: "Title", name: "title", widget: "string" }
+      - { label: "Body", name: "body", widget: "markdown" }
